@@ -39,6 +39,7 @@
 			{{ this.places.length ? this.places.join('/') : '请选择地点'}}
 		</view>
 		<jc-address-picker 
+		:level='level'
 		:places='places' 
 		:visible.sync='visible'
 		@change='change'
@@ -53,7 +54,8 @@
 		data() {
 			return {
 				places: ['上海市','市辖区'],
-				visible: false
+				visible: false,
+				level: 3
 			}
 		},
 		methods:{
