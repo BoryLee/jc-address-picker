@@ -53,7 +53,7 @@
 		components: { jcAddressPicker },
 		data() {
 			return {
-				places: ['上海市','市辖区'],
+				places: ['上海市','市辖区','黄浦区'],
 				visible: false,
 				level: 3
 			}
@@ -71,5 +71,10 @@
 
 ```
 
-**使用注意：确保传入的level和places匹配，如，level：4，places:["上海市","市辖区","黄浦区","南京东路街道"]**
+
+
+## 使用注意：
+ 
+  - 请在手机端使用；
+  - 确保传入的level和places匹配，如，level：4，places:["上海市","市辖区","黄浦区","南京东路街道"]
 

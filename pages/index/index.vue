@@ -19,15 +19,14 @@
 		components: { jcAddressPicker },
 		data() {
 			return {
-				places: ['上海市'],
+				places: ['上海市','市辖区','黄浦区'],
 				visible: false,
 				similar: false,
-				level:1,
+				level:3,
 			}
 		},
 		methods:{
 			change(data){
-				console.log(data);
 				this.places = data.map(i=>i.name);
 			},
 			showAddress(){

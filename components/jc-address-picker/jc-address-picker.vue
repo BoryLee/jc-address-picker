@@ -114,22 +114,57 @@
 			confirm() {
 				const [index1, index2, index3, index4] = this.multiArray;
 				let places = [];
-				this.multiArray.map((item, index) => {
-					return index > 0 ? (item == 0 ? undefined : item) : item
-				}).forEach((i, j) => {
-					if (i !== undefined) {
-						if (this[this.names[j]]) {
-							const id = this.getColumnDataKey(this[this.names[j]], i);
-							if (this[this.names[j]][id]) {
-								places[j] ={
-									id,
-									name: this[this.names[j]][id]
-								} 
-							}
+				let id;
+				if(this.similar){
+					if(index1!== undefined && index1>0){
+						id = Object.keys(this.provinces)[index1];
+						places[0] = {id,name:this.provinces[id]};
+					}
+					if(index2!== undefined && index2>0){
+						id = Object.keys(this.cities)[index2];
+						if(id){
+							places[1] = {id,name:this.cities[id]};
 						}
 					}
-				})
-				this.$emit('change', places);
+					if(index3!== undefined && index3>0){
+						id = Object.keys(this.areas)[index3];
+						if(id){
+							places[2] = {id,name:this.areas[id]};
+						}
+					}
+					if(index4!== undefined && index4>0){
+						id = Object.keys(this.streets)[index4];
+						if(id){
+							places[3] = {id,name:this.streets[id]};
+						}
+					}
+				}else{
+					if(index1!== undefined ){
+						id = Object.keys(this.provinces)[index1];
+						places[0] = {id,name:this.provinces[id]};
+					}
+					if(index2!== undefined ){
+						id = Object.keys(this.cities)[index2];
+						if(id){
+							places[1] = {id,name:this.cities[id]};
+						}
+						
+					}
+					if(index3!== undefined ){
+						id = Object.keys(this.areas)[index3];
+						if(id){
+							places[2] = {id,name:this.areas[id]};
+						}
+					}
+					if(index4!== undefined){
+						id = Object.keys(this.streets)[index4];
+						if(id){
+							places[3] = {id,name:this.streets[id]};
+						}
+						
+					}
+				}
+				this.$emit('change', places.slice(0,this.level));
 				this.hide()
 			},
 			bindChange(e) {
