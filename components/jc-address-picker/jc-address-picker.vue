@@ -328,7 +328,7 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 10;
+		z-index: 1000;
 
 		.picker-mask {
 			position: fixed;
@@ -337,7 +337,7 @@
 			left: 0;
 			right: 0;
 			background-color: rgba(0, 0, 0, .5);
-			z-index: 100;
+			z-index: 1001;
 
 			.picker-container {
 				position: absolute;
@@ -349,6 +349,7 @@
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
+				z-index: 1002;
 
 				.picker-header {
 					height: 100rpx;

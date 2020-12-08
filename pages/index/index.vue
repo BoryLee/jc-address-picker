@@ -17,7 +17,7 @@
 		components: { jcAddressPicker },
 		data() {
 			return {
-				places: ['上海市','市辖区'],
+				places: ['上海市','市辖区','黄浦区','南京步行街'],
 				visible: false
 			}
 		},
