@@ -257,7 +257,6 @@
 						const index = keys.findIndex(key => {
 							return key == place || this[name][key] == place;
 						})
-						console.log("+++++",i,index)
 						if (index > -1) {
 							this.multiArray.splice(i, 1, index);
 							id = keys[index];

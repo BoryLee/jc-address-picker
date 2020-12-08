@@ -23,6 +23,7 @@
 		},
 		methods:{
 			change(data){
+				console.log(data);
 				this.places = data.map(i=>i.name);
 			},
 			showAddress(){
